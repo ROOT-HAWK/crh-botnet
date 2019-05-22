@@ -81,3 +81,26 @@ The code on the robot side looks slightly more complicated, but the most of it
 is initializing the H-Bridge. The rest of them should be pretty self-explanatory.
 
 .. literalinclude:: examples/button_controls_drive.py
+
+
+.. _hbridge:
+
+HBridge Drive
+-------------
+
+*Added in version 0.2.0*
+
+A simple code for using the :class:`~crh_botnet.drive.HBridgeDrive` class. Offline
+is set to True here because this code does not involve the use of network and
+it's not necessary to connect to the network. The ``reverse_left`` and ``reverse_right``
+keyword arguments are purely dependent on your wiring only and you don't have to
+set any of them.
+
+.. literalinclude:: examples/h_bridge_drive.py
+
+An alternative code (which makes it look a lot more elegant and slightly more confusing) is
+
+.. literalinclude:: examples/h_bridge_drive_alt.py
+
+It works because the :meth:`~crh_botnet.drive.HBridgeDrive.__call__` function is just a convenience wrapper
+around the :meth:`~crh_botnet.drive.HBridgeDrive.drive` function.
